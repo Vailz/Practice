@@ -2,6 +2,7 @@ const express = require('express')
 const path = require('path')
 const app = express()
 const hbs = require('hbs')
+const bcrypt = require('bcryptjs')
 
 require("./db/conn")
 const Register = require("./models/registers")
@@ -49,7 +50,9 @@ else {
     const registerUser = new Register({
         email: req.body.Email,
         password: req.body.password,
-        confirmpassword: req.body.confirmpassword
+        confirmpassword: req.body.confirmpassword,
+        name: 0,
+        telephone: 0
     })
     
     const registered = await registerUser.save();
@@ -74,6 +77,19 @@ else {
         }
 }
 })
+
+// Update data
+app.put("/settings", async (req, res) => {
+    const emailUp = req.body.email1;
+    const nameUp = req.body.name1;
+    const phoneUp = req.body.phone1;
+
+})
+
+app.listen(port, () => {
+    console.log(`server is running on port number ${port}`)
+})
+
 
             // if(password === cpassword) {
             //     const registerUser = new Register({
@@ -106,7 +122,3 @@ else {
 //         res.status(400).send("Пользователь не зарегистрирован")
 //     }
 // })
-
-app.listen(port, () => {
-    console.log(`server is running on port number ${port}`)
-})

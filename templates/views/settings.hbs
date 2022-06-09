@@ -1,18 +1,68 @@
-<!DOCTYPE html>
+     <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Settings</title>
+    <title>Настройки пользователя</title>
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 </head>
 <body>
-    <h1>В процессе</h1>
-    <form class="Form_Container" action="index">
-        <input type="submit" class="Button" value="Выйти">
 
+    <TopLine class="TopLine"> 
+        <ProfileSettings class="ProfileSettings">Настройки пользователя</ProfileSettings>
+    </TopLine>  
+
+        <Line1 class="Line1"> 
+    </Line1>  
+
+        <Line2 class="Line2"> 
+    </Line2>  
+
+    <form class="FormContainer" action="/settings" method="put">
+        <div class="EmailEnter">
+        <input type="text" id="email_enter" placeholder="Email" name="email1">
+        <label class="EmailLabel">Email</label>
+        <EmailIcon class="EmailIcon">
+        <img src="images/icons/Email_Icon.svg" >
+        </EmailIcon>
+        <small class="error_1">Укажите адрес Email</small>
+        <small class="error_2">Проверьте правильность адреса Email</small>
+        </div>
+
+        <div class="NameEnter">
+        <input type="text" id="name_enter" placeholder="Имя" name="name1">
+        <label class="NameLabel">Имя</label>
+        <NameIcon class="NameIcon">
+        <img src="images/icons/Name_Icon.svg" >
+        </NameIcon>
+        {{!-- <small class="error_1">Укажите адрес Email</small>
+        <small class="error_2">Проверьте правильность адреса Email</small> --}}
+        </div>
+
+        <div class="PhoneEnter">
+        <input type="text" id="phone_enter" placeholder="Номер телефона" name="phone1">
+        <label class="PhoneLabel">Номер телефона</label>
+        <PhoneIcon class="PhoneIcon">
+        <img src="images/icons/Phone_Icon.svg" >
+        </PhoneIcon>
+        {{!-- <small class="error_1">Укажите адрес Email</small>
+        <small class="error_2">Проверьте правильность адреса Email</small> --}}
+        </div>
+
+        <input type="submit" class="ButtonSave" value="Сохранить">
     </form>
+    
+    <form class="Form_Container">
+        <a href="/index" class="Logout">Выйти из аккаунта</a>
+    </form>
+
     <script src="js/settings.js">
     </script>
+
 </body>
 </html>
