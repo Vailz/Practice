@@ -47,11 +47,30 @@ app.post("/settings", async (req, res) => {
             
             const registered = await registerUser.save();
             res.status(201).render("settings");
-        } else {
+        } 
+        else {
             res.send("Пароли не совпадают")
         }
     } catch (error) {
         res.send("Такой пользователь уже зарегистрирован")
+    }
+})
+
+// Login
+app.post("/settings", async (req, res) => {
+    try {
+        const emailLogin = req.body.emailLogin
+        const passwordLogin = req.body.passwordLogin
+        
+        const useremail = await Register.findOne({email:emailLogin})
+        
+        if (useremail.password === passwordLogin) {
+            res.status(201).render("settings")
+        } else {
+            res.send("Пароль неверный")
+        }
+    } catch (error) {
+        res.status(400).send("invalid email")
     }
 })
 

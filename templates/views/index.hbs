@@ -85,14 +85,14 @@
                     </div>
                 </div>
 
-                <form id="SigninForm" class="Group" action="settings">
+                <form id="SigninForm" class="Group" action="settings" method="post">
 
                     <label class="Login_Account">
                         Войдите в аккаунт
                     </label>
 
                     <div class="Email_Frame_2">
-                        <input type="text" id="email_2" placeholder="Email">
+                        <input type="text" id="email_2" placeholder="Email" required name="emailLogin">
                         <label class="Email_2">Email</label>
                         <Email_Icon_Frame_2 class="Email_Icon_Frame_2">
                             <img src="images/icons/Email_Icon.svg" >
@@ -102,7 +102,7 @@
                     </div>
 
                     <div class="Password_Frame_3">
-                        <input type="password" id="pass_3" placeholder="Пароль">
+                        <input type="password" id="pass_3" placeholder="Пароль" required name="passwordLogin">
                         <label class="Password_3">Пароль</label>
                         <Lock_Icon_Frame_3 class="Lock_Icon_Frame_3">
                             <img src="images/icons/Lock_Icon.svg">
